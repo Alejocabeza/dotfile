@@ -96,6 +96,9 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+eval "$(ssh-agent -s)"
+eval "$(ssh-add ~/.ssh/bitbucket)"
+eval "$(ssh-add ~/.ssh/github)"
 eval "$(fnm env --use-on-cd)"
 
 #
