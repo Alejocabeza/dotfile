@@ -127,3 +127,6 @@ alias gpl='git pull origin'
 
 #neovim
 alias vim='nvim'
+
+# directory of work
+alias work='/mnt/d/Documents/.www'
