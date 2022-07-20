@@ -22,7 +22,7 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" }),
-        ["<TAB>"] = cmp.mapping(function(fallback)
+        ["<C-J>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.choice_active() then
@@ -31,7 +31,7 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" }),
-        ["<Shift><TAB>"] = cmp.mapping.select_prev_item(),
+        ["<C-K>"] = cmp.mapping.select_prev_item(),
         ["<ENTER>"] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,

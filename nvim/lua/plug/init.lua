@@ -11,6 +11,8 @@ return require('packer').startup(
 
         -- colorschemes
         use 'navarasu/onedark.nvim'
+        use 'sainnhe/gruvbox-material'
+        use 'luisiacc/gruvbox-baby'
 
         -- file explorer
         use {
@@ -49,6 +51,17 @@ return require('packer').startup(
 
         -- LSP
         use 'neovim/nvim-lspconfig'
+        use({
+            "glepnir/lspsaga.nvim",
+            branch = "main",
+            config = function()
+                local saga = require("lspsaga")
+
+                saga.init_lsp_saga({
+                    -- your configuration
+                })
+            end,
+        })
 
         -- Completion
 	    use({
@@ -106,9 +119,19 @@ return require('packer').startup(
         use 'docteurklein/vim-symfony'
 
         -- terminal
-        use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
-          require("toggleterm").setup()
-        end}
+        use {
+            "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+                require("toggleterm").setup()
+            end
+        }
+
+        -- comment code
+        use "tpope/vim-commentary"
+
+        -- startup
+        use {'glepnir/dashboard-nvim'}
+
+
 
     end
 )

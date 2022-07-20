@@ -8,7 +8,8 @@ require('plug')                                        -- Plugin manager
 -----------------------------------------------------------------------------
 -- Themes
 -----------------------------------------------------------------------------
-require('after/onedark')                               -- theme OneDark
+-- require('after/onedark')                               -- theme OneDark
+require('after/gruvbox-baby')                          -- theme Grouvbox
 
 -----------------------------------------------------------------------------
 -- UI and Intergration
@@ -31,3 +32,8 @@ require('after/telescope-nvim')                        -- Telescope
 -- Terminal
 -----------------------------------------------------------------------------
 require('after/toggleterm')                            -- Terminal
+
+-----------------------------------------------------------------------------
+-- Startup
+-- --------------------------------------------------------------------------
+require('after/dashboard')                             -- screen of startup

@@ -75,3 +75,7 @@ map('n', '<Leader>/', ':ToggleTerm<CR>', opts)
 
 -- lazygit
 map('n', '<leader>gg', ':LazyGit<CR>', opts)
+
+-- comment code 
+map('n', '//', ':Commentary<CR>', opts)
+map('v', '//', ':Commentary<CR>', opts)
