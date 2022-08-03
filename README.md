@@ -16,8 +16,6 @@
     - [Alacritty](./alacritty)
 - *Ssh*
   - [Ssh](./.ssh)
-- *Zsh*
-  - [Zsh](./.zshrc)
 
 # Overview
 
