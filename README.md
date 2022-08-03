@@ -1,18 +1,22 @@
----
-Author: Alejandro Cabeza
-Date: 03/08/2022
-UpdatedAt: 03/08/2022
----
-
 # Doctfiles and Configs
-
-***Lenguages***
-- Español
-- English
 
 ***Quick Links***
 - *Window manager configs*
     - [Qutile](./qtile)
     - [Openbox](./openbox)
+- *Wallpapers*
+    - [Walpapers](./wallpapers)
+- *Editor*
+    - [Nvim](./nvim)
+- *Tmux*
+    - [Tmux](./.tmux)
+- *Pycritty*
+    - [Pycritty](./pycritty)
+- *Alacritty*
+    - [Alacritty](./alacritty)
+- *Ssh*
+  - [Ssh](./.ssh)
+- *Zsh*
+  - [Zsh](./.zshrc)
 
 
