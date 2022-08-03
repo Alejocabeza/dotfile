@@ -71,7 +71,8 @@ map('n', '<Leader>P', ':DiffviewFileHistory<CR>', opts)
 map('n', '<Leader>Q', ':DiffviewClose<CR>', opts)
 
 -- terminal
-map('n', '<Leader>/', ':ToggleTerm<CR>', opts)
+map('n', '<Leader>/', '<Cmd>ToggleTerm<CR>', opts)
+map('t', '<Leader>/', '<Cmd>ToggleTerm<CR>', opts)
 
 -- lazygit
 map('n', '<leader>gg', ':LazyGit<CR>', opts)

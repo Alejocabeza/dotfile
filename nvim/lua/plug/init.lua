@@ -5,14 +5,12 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(
     function()
-
         -- Packer can manage itself
         use 'wbthomason/packer.nvim'
 
         -- colorschemes
-        use 'navarasu/onedark.nvim'
-        use 'sainnhe/gruvbox-material'
-        use 'luisiacc/gruvbox-baby'
+        use 'morhetz/gruvbox'
+        use 'dracula/vim'
 
         -- file explorer
         use {
@@ -39,10 +37,6 @@ return require('packer').startup(
         -- autopairs
         use 'cohama/lexima.vim'
 
-        -- syntax
-        use 'sheerun/vim-polyglot'
-        use 'nanotee/sqls.nvim'
-
         -- suports for editorconfig
         use 'editorconfig/editorconfig-vim'
 
@@ -61,7 +55,13 @@ return require('packer').startup(
                     -- your configuration
                 })
             end,
-        })
+       })
+        use {
+            "williamboman/nvim-lsp-installer",
+            "neovim/nvim-lspconfig",
+        }
+
+
 
         -- Completion
 	    use({
@@ -83,6 +83,7 @@ return require('packer').startup(
         use 'nvim-treesitter/nvim-treesitter'
         use 'nvim-treesitter/nvim-tree-docs'
         use 'p00f/nvim-ts-rainbow'
+        use 'nelsyeung/twig.vim'
 
         -- EasyMotion
         use 'easymotion/vim-easymotion'
@@ -128,10 +129,8 @@ return require('packer').startup(
         -- comment code
         use "tpope/vim-commentary"
 
-        -- startup
-        use {'glepnir/dashboard-nvim'}
-
-
+        -- github Copilot
+        -- use 'github/copilot.vim'
 
     end
 )

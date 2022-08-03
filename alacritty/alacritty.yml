@@ -1,35 +1,25 @@
 colors:
   bright:
-    black: '0x5c6370'
-    blue: '0x61afef'
-    cyan: '0x56b6c2'
-    green: '0x98c379'
-    magenta: '0xc678dd'
-    red: '0xe06c75'
-    white: '0xe6efff'
-    yellow: '0xd19a66'
-  dim:
-    black: '0x1e2127'
-    blue: '0x61afef'
-    cyan: '0x56b6c2'
-    green: '0x98c379'
-    magenta: '0xc678dd'
-    red: '0xe06c75'
-    white: '0x828791'
-    yellow: '0xd19a66'
+    black: '#434758'
+    blue: '#9cc4ff'
+    cyan: '#a3f7ff'
+    green: '#ddffa7'
+    magenta: '#e1acff'
+    red: '#ff8b92'
+    white: '#ffffff'
+    yellow: '#ffe585'
   normal:
-    black: '0x1e2127'
-    blue: '0x61afef'
-    cyan: '0x56b6c2'
-    green: '0x98c379'
-    magenta: '0xc678dd'
-    red: '0xe06c75'
-    white: '0x828791'
-    yellow: '0xd19a66'
+    black: '#101010'
+    blue: '#82aaff'
+    cyan: '#89ddff'
+    green: '#c3e88d'
+    magenta: '#c792ea'
+    red: '#f07178'
+    white: '#d0d0d0'
+    yellow: '#ffcb6b'
   primary:
-    background: '0x1e2127'
-    bright_foreground: '0xe6efff'
-    foreground: '0xabb2bf'
+    background: '0x292d3e'
+    foreground: '0xbbc5ff'
 font:
   bold:
     family: UbuntuMono Nerd Font
@@ -37,6 +27,6 @@ font:
     family: UbuntuMono Nerd Font
   normal:
     family: UbuntuMono Nerd Font
-  size: 14.0
+  size: 12.0
 window:
-  opacity: 0.8
+  opacity: 0.9

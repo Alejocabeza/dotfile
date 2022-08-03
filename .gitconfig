@@ -3,3 +3,5 @@
 	name = Alejandro Cabeza
 [init]
 	defaultBranch = Master
+[pull]
+	rebase = true

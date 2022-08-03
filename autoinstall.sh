@@ -14,15 +14,17 @@ npm install -g yarn
 yarn global add yaml-language-server #yaml
 yarn global add diagnostic-languageserver #diagnostic
 
+# add key ssh
+ln -s ~/.doctfile/.ssh ~/.ssh
+ssh-keygen -f ~/.ssh/bitbucket -C "bitbucket"
+ssh-keygen -f ~/.ssh/github -C "github"
+
 # move file of my doctfil
-cp -r ~/.doctfile/nvim ~/.config/nvim
-cp -r ~/.doctfile/qtile ~/.config/qtile
-cp -r ~/.doctfile/openbox ~/.config/openbox
-cp -r ~/.doctfile/pycritty ~/.config/pycritty
-cp -r ~/.doctfile/alacritty ~/.config/alacritty
-cp -r ~/.doctfile/.tmux/.tmux.conf ~/.tmux.conf
-cp ~/.doctfile/.zshrc ~/.zshrc
-cp ~/.doctfile/.gitconfig ~/.gitconfig
-
-# open neovim
-
+ln -s ~/.doctfile/nvim ~/.config/nvim
+ln -s ~/.doctfile/qtile ~/.config/qtile
+ln -s ~/.doctfile/openbox ~/.config/openbox
+ln -s ~/.doctfile/pycritty ~/.config/pycritty
+ln -s ~/.doctfile/alacritty ~/.config/alacritty
+ln -s ~/.doctfile/.tmux/.tmux.conf ~/.tmux.conf
+ln -s ~/.doctfile/.zshrc ~/.zshrc
+ln -s ~/.doctfile/.gitconfig ~/.gitconfig

@@ -1,0 +1,6 @@
+.ssh/bitbucket
+.ssh/bitbucket.pub
+.ssh/github
+.ssh/github.pub
+.ssh/known_hosts
+.ssh/known_hosts.old
