@@ -23,11 +23,6 @@ map('i', 'qq', '<ESC>', opts)
 map('v', 'qq', '<ESC>', opts)
 map('c', 'qq', '<ESC>', opts)
 
-map('i', '<C-h>', '<left>', opts)
-map('i', '<C-j>', '<down>', opts)
-map('i', '<C-k>', '<up>', opts)
-map('i', '<C-l>', '<right>', opts)
-
 -- Mapping for reload neovim
 map('n', '<C-F5>', ':source %<CR>', opts)
 
@@ -80,3 +75,22 @@ map('n', '<leader>gg', ':LazyGit<CR>', opts)
 -- comment code 
 map('n', '//', ':Commentary<CR>', opts)
 map('v', '//', ':Commentary<CR>', opts)
+
+-- Increment/Decrement
+map('n', '+', '<C-a>', opts )
+map('n', '-', '<C-x>', opts )
+
+-- Delete a word backwards
+map('n', 'dw', 'vb"_d', opts)
+
+-- Select all
+map('n', '<C-a>', 'gg<S-v>G', opts)
+
+-- New Tab
+map('n', 'te', ':tabedit<Return>', opts)
+map('n', 'ss', ':split<Return><C-w>w', opts)
+map('n', 'sv', ':vsplit<Return><C-w>w', opts)
+
+-- Reslize window
+map('n', '<', '<C-w><', opts)
+map('n', '>', '<C-w>>', opts)

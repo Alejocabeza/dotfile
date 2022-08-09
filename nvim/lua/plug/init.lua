@@ -132,5 +132,7 @@ return require('packer').startup(
         -- github Copilot
         -- use 'github/copilot.vim'
 
+        -- spectre
+        use 'windwp/nvim-spectre'
     end
 )
