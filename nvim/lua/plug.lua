@@ -3,9 +3,10 @@ local status, packer = pcall(require, "packer")
 if (not status) then
     print('Packer is not installed')
     local fn = vim.fn
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
     if fn.empty(fn.glob(install_path)) > 0 then
-      packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+        packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+            install_path })
     end
     print('Packer is installed')
     return
@@ -27,7 +28,7 @@ packer.startup(
         use 'williamboman/mason-lspconfig.nvim'
         use 'glepnir/lspsaga.nvim' -- LSP UIs
         use 'L3MON4D3/LuaSnip'
-         use {
+        use {
             'folke/trouble.nvim',
             requires = {
                 'kyazdani42/nvim-web-devicons',
@@ -41,7 +42,7 @@ packer.startup(
         use 'nelsyeung/twig.vim'
 
         -- Completion
-	    use({
+        use({
             "hrsh7th/nvim-cmp",
             requires = {
                 "hrsh7th/cmp-buffer",
@@ -53,9 +54,9 @@ packer.startup(
                 "L3MON4D3/LuaSnip",
                 "windwp/nvim-autopairs",
             },
-	    })
+        })
 
-        use ("tjdevries/colorbuddy.nvim")
+        use("tjdevries/colorbuddy.nvim")
 
         -- indent line
         use 'lukas-reineke/indent-blankline.nvim'
@@ -73,7 +74,7 @@ packer.startup(
                 { "nvim-telescope/telescope-ui-select.nvim" },
                 { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
             },
-	    })
+        })
 
         -- Integration with php
         use 'shawncplus/phpcomplete.vim'
@@ -101,6 +102,8 @@ packer.startup(
         use 'lewis6991/gitsigns.nvim'
         use 'dinhhuy258/git.nvim'
 
+        -- Colorizer
+        use 'norcalli/nvim-colorizer.lua'
+
     end
 )
-
