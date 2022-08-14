@@ -3,32 +3,31 @@ if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
 
-local function on_attach(client, bufnr)
+local on_attach = function(client, bufnr)
 
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
-    -- Enable Completion triggered by <C-x><C-o>
+    -- Enable Completion
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    -- Mappings.
+    -- Mappings
     local opts = { noremap = true, silent = true }
-
-    buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
-
-    -- formating
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.documentFormattingProvider then
+        vim.api.nvim_command [[ augroup Format ]]
+        vim.api.nvim_command [[ autocmd! * <buffer> ]]
+        vim.api.nvim_command [[ autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync() ]]
+        vim.api.nvim_command [[ augroup END ]]
         vim.api.nvim_create_autocmd("BufWritePre", {
             group = vim.api.nvim_create_augroup("Format", { clear = true }),
             buffer = bufnr,
             callback = function() vim.lsp.buf.formatting_seq_sync() end
         })
     end
+
 end
 
 protocol.CompletionItemKind = {
@@ -46,7 +45,7 @@ protocol.CompletionItemKind = {
     '', -- Value
     '', -- Enum
     '', -- Keyword
-    '﬌', -- Snippet
+    '', -- Snippet
     '', -- Color
     '', -- File
     '', -- Reference

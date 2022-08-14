@@ -2,10 +2,11 @@ local status, saga = pcall(require, "lspsaga")
 if (not status) then return end
 
 saga.init_lsp_saga {
-  server_filetype_map = {
-    typescript = 'typescript',
-    php = 'php'
-  }
+      server_filetype_map = {
+            typescript = 'typescript',
+            php = 'php',
+            javascirpt = 'javascirpt'
+      }
 }
 
 local opts = { noremap = true, silent = true }
