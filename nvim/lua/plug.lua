@@ -45,5 +45,6 @@ packer.startup(
         use 'tpope/vim-commentary'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'folke/trouble.nvim'
+        use 'editorconfig/editorconfig-vim'
     end
 )
