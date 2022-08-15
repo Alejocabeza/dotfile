@@ -1,9 +1,5 @@
 local keymap = vim.keymap
 
--- Save\Exit
-keymap.set('n', 'q', ':q!<CR>')
-keymap.set('n', 'w', ':w!<CR>')
-
 -- return the mode normal
 keymap.set('i', 'qq', '<ESC>')
 keymap.set('v', 'qq', '<ESC>')

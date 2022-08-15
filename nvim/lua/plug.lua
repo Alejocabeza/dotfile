@@ -42,9 +42,11 @@ packer.startup(
         use 'lewis6991/gitsigns.nvim'
         use 'dinhhuy258/git.nvim' -- For git blame & browse
         use { 'akinsho/toggleterm.nvim', tag = 'v2.*', config = function() require('toggleterm').setup() end } -- Terminal integrated in neovim
-        use 'tpope/vim-commentary'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'folke/trouble.nvim'
         use 'editorconfig/editorconfig-vim'
+        use 'sindrets/diffview.nvim' -- view change for git
+        use 'terrortylor/nvim-comment' -- Comment
+        use 'qbbr/vim-symfony' -- Integating with symfony
     end
 )
