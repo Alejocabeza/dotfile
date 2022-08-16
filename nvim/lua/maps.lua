@@ -1,10 +1,5 @@
 local keymap = vim.keymap
 
--- return the mode normal
-keymap.set('i', 'qq', '<ESC>')
-keymap.set('v', 'qq', '<ESC>')
-keymap.set('c', 'qq', '<ESC>')
-
 -- duplicate line
 keymap.set('n', 'tt', ':t.<CR>')
 
