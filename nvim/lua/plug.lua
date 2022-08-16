@@ -48,5 +48,6 @@ packer.startup(
         use 'sindrets/diffview.nvim' -- view change for git
         use 'terrortylor/nvim-comment' -- Comment
         use 'qbbr/vim-symfony' -- Integating with symfony
+        use { 'phaazon/hop.nvim', branch = 'v2' }
     end
 )

@@ -18,16 +18,15 @@ keymap.set('n', '-', '<C-x>')
 keymap.set('n', 'dw', 'vb"_d')
 
 -- Select all
-keymap.set('n', '<C-a>', 'gg<S-v>G')
-
--- Save with root permission (not working for now)
---vim.api.nvim_create_user_command('W', 'w !sudo tee > /dev/null %', {})
+keymap.set('n', 'aa', 'gg<S-v>G')
 
 -- New tab
 keymap.set('n', 'te', ':tabedit<Return><CR>')
+
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+
 -- Move window
 keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('', 'sh', '<C-w>h')

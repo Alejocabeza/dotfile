@@ -124,6 +124,9 @@ alias gcl='git clone'
 alias gch='git checkout'
 alias gp='git push origin'
 alias gpl='git pull origin'
+alias gs='git stash'
+alias gsp='git stash pop'
+alias gss='git stash show'
 
 #neovim
 alias vim='nvim'
