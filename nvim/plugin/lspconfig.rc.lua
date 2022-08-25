@@ -4,12 +4,11 @@ if (not status) then return end
 local protocol = require('vim.lsp.protocol')
 
 local on_attach = function(client, bufnr)
-
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
     -- Enable Completion
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    buf_set_option('omnifunc', 'v:lua.vim..lsp.omnifunc')
 
     -- Mappings
     local opts = { noremap = true, silent = true }
@@ -69,13 +68,14 @@ nvim_lsp.flow.setup {
 
 nvim_lsp.tsserver.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
     cmd = { "typescript-language-server", "--stdio" },
-    capabilities = capabilities
 }
 
 nvim_lsp.sumneko_lua.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     settings = {
         Lua = {
             diagnostics = {
@@ -94,37 +94,37 @@ nvim_lsp.sumneko_lua.setup {
 
 nvim_lsp.intelephense.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     filetypes = { 'php' },
-    capabilities = capabilities
 }
 
 nvim_lsp.dockerls.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     filetypes = { 'dockerfile' },
-    capabilities = capabilities
 }
 
 nvim_lsp.vimls.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     filetypes = { 'vim' },
-    capabilities = capabilities
 }
 
 nvim_lsp.yamlls.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     filetypes = { 'yaml', 'yaml.docker-compose', 'yml' },
-    capabilities = capabilities
 }
 
 nvim_lsp.sqls.setup {
     on_attach = on_attach,
+    capabilities = capabilities,
     filetypes = { "sql", "mysql" },
-    capabilities = capabilities
 }
 
 nvim_lsp.diagnosticls.setup {
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
 }
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
