@@ -9,7 +9,7 @@ end
 
 local is_mac = has 'macunix'
 local is_win = has 'win32'
-local is_linux = has 'linux'
+local is_linux = has 'unix'
 
 if is_mac then
     require('macos')
