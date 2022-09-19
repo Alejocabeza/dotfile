@@ -57,83 +57,106 @@ def window_to_next_group(qtile):
 
 keys = [
 
-    # ------------ Window Configs ------------
+# Most of our keybindings are in sxhkd file - except these
 
-    # Switch between windows in current stack pane
-    Key([mod], "j", lazy.layout.down()),
+# SUPER + FUNCTION KEYS
+
+    Key([mod], "f", lazy.window.toggle_fullscreen()),
+    Key([mod], "q", lazy.window.kill()),
+
+
+# SUPER + SHIFT KEYS
+
+    Key([mod, "shift"], "q", lazy.window.kill()),
+    Key([mod, "shift"], "r", lazy.restart()),
+
+
+# QTILE LAYOUT KEYS
+    Key([mod], "n", lazy.layout.normalize()),
+    Key([mod], "space", lazy.next_layout()),
+
+# CHANGE FOCUS
+    Key([mod], "Up", lazy.layout.up()),
+    Key([mod], "Down", lazy.layout.down()),
+    Key([mod], "Left", lazy.layout.left()),
+    Key([mod], "Right", lazy.layout.right()),
     Key([mod], "k", lazy.layout.up()),
+    Key([mod], "j", lazy.layout.down()),
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
 
-    # Change window sizes (MonadTall)
-    Key([mod, "shift"], "l", lazy.layout.grow()),
-    Key([mod, "shift"], "h", lazy.layout.shrink()),
 
-    # Toggle floating
-    Key([mod, "shift"], "f", lazy.window.toggle_floating()),
+# RESIZE UP, DOWN, LEFT, RIGHT
+    Key([mod, "control"], "l",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
+        ),
+    Key([mod, "control"], "Right",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
+        ),
+    Key([mod, "control"], "h",
+        lazy.layout.grow_left(),
+        lazy.layout.shrink(),
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
+        ),
+    Key([mod, "control"], "Left",
+        lazy.layout.grow_left(),
+        lazy.layout.shrink(),
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
+        ),
+    Key([mod, "control"], "k",
+        lazy.layout.grow_up(),
+        lazy.layout.grow(),
+        lazy.layout.decrease_nmaster(),
+        ),
+    Key([mod, "control"], "Up",
+        lazy.layout.grow_up(),
+        lazy.layout.grow(),
+        lazy.layout.decrease_nmaster(),
+        ),
+    Key([mod, "control"], "j",
+        lazy.layout.grow_down(),
+        lazy.layout.shrink(),
+        lazy.layout.increase_nmaster(),
+        ),
+    Key([mod, "control"], "Down",
+        lazy.layout.grow_down(),
+        lazy.layout.shrink(),
+        lazy.layout.increase_nmaster(),
+        ),
 
-    # Move windows up or down in current stack
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
+
+# FLIP LAYOUT FOR MONADTALL/MONADWIDE
+    Key([mod, "shift"], "f", lazy.layout.flip()),
+
+# FLIP LAYOUT FOR BSP
+    Key([mod, "mod1"], "k", lazy.layout.flip_up()),
+    Key([mod, "mod1"], "j", lazy.layout.flip_down()),
+    Key([mod, "mod1"], "l", lazy.layout.flip_right()),
+    Key([mod, "mod1"], "h", lazy.layout.flip_left()),
+
+# MOVE WINDOWS UP OR DOWN BSP LAYOUT
     Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left()),
+    Key([mod, "shift"], "l", lazy.layout.shuffle_right()),
 
-    # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout()),
-    Key([mod, "shift"], "Tab", lazy.prev_layout()),
+# MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
+    Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
+    Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
+    Key([mod, "shift"], "Left", lazy.layout.swap_left()),
+    Key([mod, "shift"], "Right", lazy.layout.swap_right()),
 
-    # Kill window
-    Key([mod], "w", lazy.window.kill()),
+# TOGGLE FLOATING LAYOUT
+    Key([mod, "shift"], "space", lazy.window.toggle_floating()),
 
-    # Switch focus of monitors
-    Key([mod], "period", lazy.next_screen()),
-    Key([mod], "comma", lazy.prev_screen()),
-
-    # Restart Qtile
-    Key([mod, "control"], "r", lazy.restart()),
-
-    Key([mod, "control"], "q", lazy.shutdown()),
-    Key([mod], "r", lazy.spawncmd()),
-
-    # ------------ App Configs ------------
-
-    # Menu
-    Key([mod], "m", lazy.spawn("rofi -show drun")),
-
-    # Window Nav
-    Key([mod, "shift"], "m", lazy.spawn("rofi -show")),
-
-    # Browser
-    Key([mod], "b", lazy.spawn("firefox")),
-
-    # File Explorer
-    Key([mod], "e", lazy.spawn("dolphin")),
-
-    # Terminal
-    Key([mod], "Return", lazy.spawn("alacritty")),
-
-    # Redshift
-    Key([mod], "r", lazy.spawn("redshift -O 2400")),
-    Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
-
-    # Screenshot
-    Key([mod], "s", lazy.spawn("scrot")),
-    Key([mod, "shift"], "s", lazy.spawn("scrot -s")),
-
-    # ------------ Hardware Configs ------------
-
-    # Volume
-    Key([], "XF86AudioLowerVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ -5%"
-    )),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
-    )),
-    Key([], "XF86AudioMute", lazy.spawn(
-        "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-    )),
-
-    # Brightness
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
     ]
 
 def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
@@ -537,7 +560,7 @@ bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules,
+    *layout.Floating.default_float_rules, 
     Match(wm_class='confirmreset'),  # gitk
     Match(wm_class='makebranch'),  # gitk
     Match(wm_class='maketag'),  # gitk
