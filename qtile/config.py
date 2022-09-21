@@ -102,10 +102,10 @@ keys = [
     Key([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
     # Browser
-    Key([mod], "b", lazy.spawn("firefox")),
+    Key([mod], "b", lazy.spawn("google-chrome-stable")),
 
     # File Explorer
-    Key([mod], "e", lazy.spawn("dolphin")),
+    Key([mod], "e", lazy.spawn("thunar")),
 
     # Terminal
     Key([mod], "Return", lazy.spawn("alacritty")),
@@ -180,22 +180,6 @@ for i in range(len(group_names)):
             layout=group_layouts[i].lower(),
             label=group_labels[i],
         ))
-
-for i in groups:
-    keys.extend([
-
-#CHANGE WORKSPACES
-        Key([mod], i.name, lazy.group[i.name].toscreen()),
-        Key([mod], "Tab", lazy.screen.next_group()),
-        Key([mod, "shift" ], "Tab", lazy.screen.prev_group()),
-        Key(["mod1"], "Tab", lazy.screen.next_group()),
-        Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
-
-# MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
-        #Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
-# MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND FOLLOW MOVED WINDOW TO WORKSPACE
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
-    ])
 
 
 def init_layout_theme():
