@@ -22,7 +22,10 @@ ts.setup {
         'yaml',
         'dockerfile',
         'json',
-        'scss'
+        'scss',
+        'javascript',
+        'typescript',
+        'python'
     },
     autotag = {
         enable = true,
