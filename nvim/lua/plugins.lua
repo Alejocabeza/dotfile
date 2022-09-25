@@ -1,9 +1,10 @@
 local status, packer = pcall(require, 'packer')
 
-local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim/'
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim/'
 if (not status) then
     print('Packer is Installing')
-    packer_bootstrap = vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    packer_bootstrap = vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+        install_path })
     print('Packer is Installed')
 end
 
@@ -12,7 +13,8 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(
     function(use)
         use 'wbthomason/packer.nvim'
-        use 'morhetz/gruvbox' -- theme
+        -- use 'morhetz/gruvbox' -- Gruvbox Theme
+        use 'Mofiqul/dracula.nvim' -- Dracula Theme
         use 'hoob3rt/lualine.nvim' -- StatusLine
         use 'neovim/nvim-lspconfig' -- LSP
         use 'onsails/lspkind-nvim' -- vscode-like pictograms
