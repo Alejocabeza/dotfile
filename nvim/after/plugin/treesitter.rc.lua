@@ -4,6 +4,7 @@ if (not status) then return end
 ts.setup {
     highlight = {
         enable = true,
+        additional_vim_regex_highlighting = { 'php' },
         disable = {},
     },
     indent = {
@@ -30,6 +31,14 @@ ts.setup {
     autotag = {
         enable = true,
     },
+    rainbow = {
+        enable = true,
+        extended_mode = true,
+        max_file_lines = nil,
+    },
+    tree_docs = {
+        enable = true
+    }
 }
 
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()

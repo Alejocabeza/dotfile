@@ -2,6 +2,9 @@ local keymap = vim.keymap
 
 keymap.set('n', 'x', '"_x')
 
+-- Copy a line
+keymap.set('n', 'tt', ':t .<CR>')
+
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
@@ -30,4 +33,3 @@ keymap.set('n', '<right>', '<C-w><')
 keymap.set('n', '<left>', '<C-w>>')
 keymap.set('n', '<up>', '<C-w>+')
 keymap.set('n', '<down>', '<C-w>-')
-
