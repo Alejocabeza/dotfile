@@ -13,8 +13,9 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(
     function(use)
         use 'wbthomason/packer.nvim'
-        use 'morhetz/gruvbox' -- Gruvbox Theme
+        --[[ use 'morhetz/gruvbox' -- Gruvbox Theme ]]
         --[[ use 'Mofiqul/dracula.nvim' -- Dracula Theme ]]
+        use 'navarasu/onedark.nvim'
         use 'hoob3rt/lualine.nvim' -- StatusLine
         use 'neovim/nvim-lspconfig' -- LSP
         use 'onsails/lspkind-nvim' -- vscode-like pictograms
