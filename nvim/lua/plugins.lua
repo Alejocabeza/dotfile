@@ -14,8 +14,8 @@ packer.startup(
     function(use)
         use 'wbthomason/packer.nvim'
         --[[ use 'morhetz/gruvbox' -- Gruvbox Theme ]]
-        --[[ use 'Mofiqul/dracula.nvim' -- Dracula Theme ]]
-        use 'navarasu/onedark.nvim'
+        use 'Mofiqul/dracula.nvim' -- Dracula Theme
+        --[[ use 'navarasu/onedark.nvim' ]]
         use 'hoob3rt/lualine.nvim' -- StatusLine
         use 'neovim/nvim-lspconfig' -- LSP
         use 'onsails/lspkind-nvim' -- vscode-like pictograms
@@ -46,5 +46,7 @@ packer.startup(
         use 'p00f/nvim-ts-rainbow' -- Color of pairs
         use 'nvim-treesitter/nvim-tree-docs'
         use 'lukas-reineke/indent-blankline.nvim'
+        use 'MunifTanjim/eslint.nvim'
+        use 'christoomey/vim-tmux-navigator'
     end
 )

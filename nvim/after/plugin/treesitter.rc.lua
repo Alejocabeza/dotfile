@@ -26,7 +26,8 @@ ts.setup {
         'scss',
         'javascript',
         'typescript',
-        'python'
+        'python',
+        'fish'
     },
     autotag = {
         enable = true,

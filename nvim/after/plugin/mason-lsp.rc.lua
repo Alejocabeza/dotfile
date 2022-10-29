@@ -6,7 +6,6 @@ mason_lsp.setup({
         'bashls',
         'diagnosticls',
         'dockerls',
-        'flow',
         'intelephense',
         'tsserver',
         'vimls',

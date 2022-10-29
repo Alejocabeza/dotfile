@@ -4,4 +4,4 @@
 [init]
 	defaultBranch = Master
 [pull]
-	rebase = true
+	rebase = false

@@ -3,7 +3,7 @@ if (not status) then return end
 
 onedark.setup {
     style = 'dark',
-    transparent = false,
+    transparent = true,
     code_style = {
         comments = 'italic',
         keywords = 'none',
