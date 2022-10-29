@@ -47,6 +47,7 @@ packer.startup(
         use 'nvim-treesitter/nvim-tree-docs'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'MunifTanjim/eslint.nvim'
-        use 'nvim-tree/nvim-tree.lua'
+        use 'szw/vim-maximizer'
+        use 'jayp0521/mason-null-ls.nvim'
     end
 )

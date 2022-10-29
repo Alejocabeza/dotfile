@@ -76,3 +76,10 @@ vim.keymap.set("n", "sf", function()
         layout_config = { height = 40 }
     })
 end)
+
+-- Command for git
+vim.keymap.set('n', ';gc', "<cmd>Telescope git_commits<cr>")
+vim.keymap.set('n', ';gfc', "<cmd>Telescope git_bcommits<cr>")
+vim.keymap.set('n', ';gb', "<cmd>Telescope git_branches<cr>")
+vim.keymap.set('n', ';gs', "<Cmd>Telescope git_status<CR>")
+
