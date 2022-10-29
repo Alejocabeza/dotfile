@@ -4,7 +4,7 @@ if (not status) then return end
 ts.setup {
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { 'php' },
+        additional_vim_regex_highlighting = { 'php', 'javascript', 'typescript' },
         disable = {},
     },
     indent = {

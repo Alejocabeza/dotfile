@@ -47,6 +47,6 @@ packer.startup(
         use 'nvim-treesitter/nvim-tree-docs'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'MunifTanjim/eslint.nvim'
-        use 'christoomey/vim-tmux-navigator'
+        use 'nvim-tree/nvim-tree.lua'
     end
 )
