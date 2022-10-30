@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Some ways to set your wallpaper besides variety or nitrogen
-feh --bg-fill $HOME/doctfile/wallpapers/wallpaper1.jpg &
+feh --bg-fill $HOME/dotfile/wallpapers/wallpaper1.jpg &
 
 # Start the conky to learn the shortcuts
-(conky -c $HOME/doctfile/qtile/scripts/system-overview)
+(conky -c $HOME/dotfile/qtile/scripts/system-overview)
 
 # Start sxhkd to replace qtile native key-bindings
 sxhkd -c ~/doctfile/qtile/sxhkd/sxhkdrc &
