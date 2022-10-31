@@ -4,3 +4,4 @@
 .ssh/github.pub
 .ssh/known_hosts
 .ssh/known_hosts.old
+/.php-cs-fixer.cache
