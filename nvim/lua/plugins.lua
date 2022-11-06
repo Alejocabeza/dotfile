@@ -17,40 +17,46 @@ end
 vim.cmd([[packadd packer.nvim]])
 
 packer.startup(function(use)
-	use("wbthomason/packer.nvim")
-	use("navarasu/onedark.nvim")
+	use("wbthomason/packer.nvim") -- Packer
+	use("navarasu/onedark.nvim") -- theme
 	use("hoob3rt/lualine.nvim") -- StatusLine
-	use("neovim/nvim-lspconfig") -- LSP
+	use("akinsho/nvim-bufferline.lua") -- BufferLine
+	use("nvim-lua/plenary.nvim") -- Common utilities
+	use("szw/vim-maximizer") -- Maximizer panel
+	use("lukas-reineke/indent-blankline.nvim") -- Line Indent
+	use("kyazdani42/nvim-web-devicons") -- File icons
+	use("MunifTanjim/prettier.nvim") -- Prettier plugin for Neovim's built-in LSP client
+	use("MunifTanjim/eslint.nvim") -- Eslint plugin for neovim
+	use("numToStr/Comment.nvim") -- Comment Plugin for neovim
+	use({ "mg979/vim-visual-multi", branch = "master" }) -- Cursor Multi Edit for Neovim
+	use("williamboman/mason-lspconfig.nvim") -- Manager of Installing for LSP and Built for neovim
+	use("williamboman/mason.nvim") -- Manager of Installing for LSP and Built for neovim
+	use("qbbr/vim-symfony") -- Integration of Symfony for neovim
+	use("gpanders/editorconfig.nvim") -- Integration of EditorConfig for Neovim
+	-- LSP
+	use("neovim/nvim-lspconfig") -- LSP NATIVE
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
+	use("glepnir/lspsaga.nvim") -- LSP UIs
+	-- autocomplete
+	use("hrsh7th/nvim-cmp") -- Completion
 	use("hrsh7th/cmp-buffer") -- nvim-cmp source for buffer words
 	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
-	use("hrsh7th/nvim-cmp") -- Completion
 	use("L3MON4D3/LuaSnip") -- Snips
-	use({ "nvim-treesitter/nvim-treesitter", opts = ":TSUpdate" })
-	use("windwp/nvim-autopairs")
-	use("windwp/nvim-ts-autotag")
-	use("nvim-lua/plenary.nvim") -- Common utilities
+	use("windwp/nvim-ts-autotag") -- Completion Of Tags
+	use("windwp/nvim-autopairs") -- Completion Of Pairs
+	use("p00f/nvim-ts-rainbow") -- Color of pairs
+	-- Treesitter
+	use({ "nvim-treesitter/nvim-treesitter", opts = ":TSUpdate" }) -- syntax
+	use("nvim-treesitter/nvim-treesitter-context") -- syntax context
+	use("nvim-treesitter/nvim-tree-docs") -- syntax docs
+	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
-	use("kyazdani42/nvim-web-devicons") -- File icons
-	use("akinsho/nvim-bufferline.lua")
-	use("glepnir/lspsaga.nvim") -- LSP UIs
+	-- Null
 	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-	use("MunifTanjim/prettier.nvim") -- Prettier plugin for Neovim's built-in LSP client
+	use("jayp0521/mason-null-ls.nvim") -- Use Neovim as a Built-in for LSP
+	-- Git
 	use("lewis6991/gitsigns.nvim")
 	use("dinhhuy258/git.nvim") -- For git blame & browse
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("sindrets/diffview.nvim")
-	use("qbbr/vim-symfony")
-	use("gpanders/editorconfig.nvim")
-	use({ "mg979/vim-visual-multi", branch = "master" })
-	use("numToStr/Comment.nvim")
-	use("p00f/nvim-ts-rainbow") -- Color of pairs
-	use("nvim-treesitter/nvim-tree-docs")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("MunifTanjim/eslint.nvim")
-	use("szw/vim-maximizer")
-	use("jayp0521/mason-null-ls.nvim")
-	use("nvim-treesitter/nvim-treesitter-context")
+	use("sindrets/diffview.nvim") -- For show of change that make of code
 end)
