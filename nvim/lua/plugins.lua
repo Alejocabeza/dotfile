@@ -18,9 +18,7 @@ vim.cmd([[packadd packer.nvim]])
 
 packer.startup(function(use)
 	use("wbthomason/packer.nvim")
-	--[[ use 'morhetz/gruvbox' -- Gruvbox Theme ]]
-	--[[ use 'Mofiqul/dracula.nvim' -- Dracula Theme ]]
-	use("navarasu/onedark.nvim")
+	use("morhetz/gruvbox") -- Gruvbox Theme
 	use("hoob3rt/lualine.nvim") -- StatusLine
 	use("neovim/nvim-lspconfig") -- LSP
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
@@ -54,4 +52,5 @@ packer.startup(function(use)
 	use("MunifTanjim/eslint.nvim")
 	use("szw/vim-maximizer")
 	use("jayp0521/mason-null-ls.nvim")
+	use("nvim-treesitter/nvim-treesitter-context")
 end)
