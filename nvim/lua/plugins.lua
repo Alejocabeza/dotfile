@@ -31,8 +31,8 @@ packer.startup(function(use)
 	use({ "mg979/vim-visual-multi", branch = "master" }) -- Cursor Multi Edit for Neovim
 	use("williamboman/mason-lspconfig.nvim") -- Manager of Installing for LSP and Built for neovim
 	use("williamboman/mason.nvim") -- Manager of Installing for LSP and Built for neovim
-	use("qbbr/vim-symfony") -- Integration of Symfony for neovim
 	use("gpanders/editorconfig.nvim") -- Integration of EditorConfig for Neovim
+	use("nelsyeung/twig.vim") -- Integration of twig for neovim
 	-- LSP
 	use("neovim/nvim-lspconfig") -- LSP NATIVE
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
@@ -42,13 +42,13 @@ packer.startup(function(use)
 	use("hrsh7th/cmp-buffer") -- nvim-cmp source for buffer words
 	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in LSP
 	use("L3MON4D3/LuaSnip") -- Snips
-	use("windwp/nvim-ts-autotag") -- Completion Of Tags
-	use("windwp/nvim-autopairs") -- Completion Of Pairs
-	use("p00f/nvim-ts-rainbow") -- Color of pairs
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", opts = ":TSUpdate" }) -- syntax
 	use("nvim-treesitter/nvim-treesitter-context") -- syntax context
 	use("nvim-treesitter/nvim-tree-docs") -- syntax docs
+	use("windwp/nvim-ts-autotag") -- Completion Of Tags
+	use("windwp/nvim-autopairs") -- Completion Of Pairs
+	use("p00f/nvim-ts-rainbow") -- Color of pairs
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
