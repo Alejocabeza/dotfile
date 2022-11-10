@@ -23,6 +23,7 @@ alias gpl 'git pull origin'
 alias gs 'git stash'
 alias gsp 'git stash pop'
 alias gss 'git stash show'
+alias gb 'git branch'
 
 #neovim
 alias vim 'nvim'
