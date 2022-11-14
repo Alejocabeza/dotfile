@@ -1,4 +1,5 @@
 #!/bin/sh
+run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 
 # Some ways to set your wallpaper besides variety or nitrogen
 feh --bg-fill $HOME/dotfile/wallpapers/wallpaper1.jpg &
