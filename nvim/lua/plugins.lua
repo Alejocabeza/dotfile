@@ -8,7 +8,7 @@ if not status then
 		"clone",
 		"--depth",
 		"1",
-		"https://github.com/wbthomason/packer.nvim",
+		f("https://github.com/wbthomason/packer.nvim"),
 		install_path,
 	})
 	print("Packer is Installed")
