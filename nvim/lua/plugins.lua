@@ -37,6 +37,7 @@ packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- LSP NATIVE
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
 	use("glepnir/lspsaga.nvim") -- LSP UIs
+	use("folke/lsp-colors.nvim") -- LSP Color
 	-- autocomplete
 	use("hrsh7th/nvim-cmp") -- Completion
 	use("hrsh7th/cmp-buffer") -- nvim-cmp source for buffer words
