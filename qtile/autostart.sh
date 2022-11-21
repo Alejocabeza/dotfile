@@ -1,22 +1,21 @@
 #!/bin/sh
-run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 
 # Some ways to set your wallpaper besides variety or nitrogen
 feh --bg-fill $HOME/dotfile/wallpapers/wallpaper1.jpg &
 
 # Start the conky to learn the shortcuts
-(conky -c $HOME/dotfile/qtile/scripts/system-overview)
+# (conky -c $HOME/dotfile/qtile/scripts/system-overview)
 
 # Start sxhkd to replace qtile native key-bindings
-sxhkd -c ~/doctfile/qtile/sxhkd/sxhkdrc &
+# sxhkd -c ~/doctfile/qtile/sxhkd/sxhkdrc &
 
 # Starting utility applications at boot time
 variety &
 nm-applet &
-pamac-tray &
-xfce-power-manager &
-numlockx on &
-blueberry-tray &
+# pamac-tray &
+# xfce-power-manager &
+# numlockx on &
+# blueberry-tray &
 picom --config $HOME/.config/qtile/scripts/picom.conf &
 
 # systray battery icon

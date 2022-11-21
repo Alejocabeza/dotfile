@@ -1,6 +1,7 @@
 local status, packer = pcall(require, "packer")
 
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim/"
+
 if not status then
 	print("Packer is Installing")
 	packer_bootstrap = vim.fn.system({
@@ -18,7 +19,7 @@ vim.cmd([[packadd packer.nvim]])
 
 packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Packer
-	use("navarasu/onedark.nvim") -- theme
+	use("Mofiqul/dracula.nvim")
 	use("hoob3rt/lualine.nvim") -- StatusLine
 	use("akinsho/nvim-bufferline.lua") -- BufferLine
 	use("nvim-lua/plenary.nvim") -- Common utilities
