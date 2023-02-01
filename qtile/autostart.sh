@@ -15,7 +15,7 @@ nm-applet &
 # pamac-tray &
 # xfce-power-manager &
 # numlockx on &
-# blueberry-tray &
+blueberry-tray &
 picom --config $HOME/.config/qtile/scripts/picom.conf &
 
 # systray battery icon
