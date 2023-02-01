@@ -13,7 +13,7 @@ feh --bg-fill $HOME/dotfile/wallpapers/wallpaper1.jpg &
 variety &
 nm-applet &
 # pamac-tray &
-# xfce-power-manager &
+xfce4-power-manager &
 # numlockx on &
 blueberry-tray &
 picom --config $HOME/.config/qtile/scripts/picom.conf &

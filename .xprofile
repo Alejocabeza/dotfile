@@ -1,1 +1,8 @@
-xrandr --output HDMI1 --primary --mode 1366x768 &
+# Screens
+hdmi=`xrandr | grep ' connected' | grep 'HDMI' | awk '{print $1}'`
+
+if [ "$hdmi" = "HDMI-1" ]; then
+  xrandr --output eDP-1 --primary --mode 1366x768  --output HDMI-1 --mode 1366x768 &
+else
+  xrandr --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off &
+fi

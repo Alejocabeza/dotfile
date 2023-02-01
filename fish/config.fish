@@ -1,4 +1,3 @@
-neofetch
 set fish_greeting ""
 eval (ssh-agent -c)
 eval (ssh-add ~/.ssh/github)
