@@ -4,7 +4,6 @@ eval (ssh-add ~/.ssh/github)
 eval (ssh-add ~/.ssh/bitbucket)
 
 # Aliases
-alias cat "bat --style=plain --paging=never"
 alias grep "grep --color=auto"
 alias ls "exa --all --group-directories-first"
 alias tree "exa -T"
