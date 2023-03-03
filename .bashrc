@@ -14,18 +14,6 @@ alias ll='ls -la'
 
 # Git
 alias g='git'
-alias gi='git init'
-alias ga='git add .'
-alias gst='git status'
-alias gc='git commit -m'
-alias gcl='git clone'
-alias gch='git checkout'
-alias gp='git push origin'
-alias gpl='git pull origin'
-alias gb='git branch'
-alias gs='git stash'
-alias gsp='git stash pop'
-alias gss='git stash show'
 
 # vim
 alias vim='nvim'
