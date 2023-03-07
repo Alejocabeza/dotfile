@@ -15,7 +15,9 @@
     a = "!git status --short | peco | awk '{print $2}' | xargs git add"
     aa = add .
     d = diff
-    co = checkout
+    ch = checkout
+    cl = clone
+    clb = clone -b
     ci = commit -m
     ca = commit -a
     ps = push origin
