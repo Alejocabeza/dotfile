@@ -16,8 +16,11 @@ alias reset 'source ~/.config/fish/config.fish'
 
 # directory
 alias www 'cd ~/www'
-alias fish 'cd ~/.config/fish'
+alias erp 'cd ~/www/algoritmoo-erp'
+alias fish 'vim ~/.config/fish/config.fish'
 alias nvim_config 'cd ~/.config/nvim'
+
+alias docker_stop 'docker ps -aq | xargs docker stop'
 
 #neovim
 alias vim 'nvim'
