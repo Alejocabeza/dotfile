@@ -12,6 +12,8 @@ alias ubuntu='cd \\wsl.localhost\Ubuntu\home\alejo\www'
 # List Directory
 alias ll='ls -la'
 
+alias reset='source ~/.bashrc'
+
 # Git
 alias g='git'
 
