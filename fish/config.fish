@@ -7,7 +7,7 @@ eval (ssh-add ~/.ssh/bitbucket)
 alias grep "grep --color=auto"
 alias ls "exa --all --group-directories-first"
 alias tree "exa -T"
-alias dotfiles "git --git-dir $HOME/dotfiles/ --work-tree $HOME"
+alias dotfiles "git --git-dir $HOME/dotfile/ --work-tree $HOME"
 
 # git
 alias g 'git'
@@ -21,6 +21,9 @@ alias fish 'vim ~/.config/fish/config.fish'
 alias nvim_config 'cd ~/.config/nvim'
 
 alias docker_stop 'docker ps -aq | xargs docker stop'
+
+# alias for windows
+alias erp-win 'cd /mnt/c/xampp/htdocs/algoritmoo-erp'
 
 #neovim
 alias vim 'nvim'
