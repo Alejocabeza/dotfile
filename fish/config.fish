@@ -15,8 +15,8 @@ alias g 'git'
 alias reset 'source ~/.config/fish/config.fish'
 
 # directory
-alias www 'cd ~/www'
-alias erp 'cd ~/www/algoritmoo-erp'
+alias www 'cd ~/workspace'
+alias erp 'cd ~/workspace/algoritmoo-erp'
 alias fish 'vim ~/.config/fish/config.fish'
 alias nvim_config 'cd ~/.config/nvim'
 
