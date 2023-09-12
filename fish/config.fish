@@ -20,9 +20,11 @@ alias erp 'cd ~/workspace/algoritmoo-erp'
 alias theme_imnova "cd ~/workspace/wordpress-dockerization/wp-content/themes/theme-imnova"
 alias fish 'vim ~/.config/fish/config.fish'
 alias nvim_config 'cd ~/.config/nvim'
+alias wp_themes "cd ~/workspace/wordpress/wp-content/themes"
+alias wp_plugins "cd ~/workspace/wordpress/wp-content/plugins"
 
 alias docker_stop 'docker ps -aq | xargs docker stop'
-alias start 'make start && make server'
+alias start 'make stop && make start && make server'
 alias migration 'make migration && make update-db'
 
 # alias for windows
