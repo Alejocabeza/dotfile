@@ -15,14 +15,14 @@ return {
   {
     "bluz71/vim-nightfly-guicolors",
     priority = 1000, -- make sure to load this before all the other start plugins
-    enabled = false,
+    enabled = true,
     config = function()
       vim.cmd([[colorscheme nightfly]])
     end,
   },
   {
     "folke/tokyonight.nvim",
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {

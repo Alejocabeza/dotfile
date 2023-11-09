@@ -12,6 +12,7 @@ return {
     "onsails/lspkind.nvim", -- vs-code like pictograms
     {
       "zbirenbaum/copilot-cmp",
+      enabled = true,
       dependencies = "copilot.lua",
       opts = {},
       config = function(_, opts)
