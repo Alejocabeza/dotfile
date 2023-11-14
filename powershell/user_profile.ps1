@@ -2,9 +2,15 @@
 Set-Alias ll ls
 Set-Alias g git
 Set-Alias vim nvim
+Set-Alias py python
 New-Alias -Name ch -Value changeDirectory
 New-Alias -Name www -Value changeWorkspaceDirectory
 New-Alias -Name dot -Value changeDotfileDirectory
+New-Alias -Name nvim_config -Value changeNvimDirectory
+New-Alias -Name ln -Value linkSymbol
+
+#PSread
+Set-PSReadLineOption -PredictionViewStyle ListView
 
 #imports
 Import-Module Terminal-Icons
@@ -28,4 +34,12 @@ function changeWorkspaceDirectory() {
 
 function changeDotfileDirectory() {
   return Set-Location '~\dotfile'
+}
+
+function changeNvimDirectory() {
+  return Set-Location '~\AppData\Local\nvim'
+}
+
+function linkSymbol($path, $target) {
+  return New-Item -ItemType SymbolicLink -Path "$path" -Target "$path" 
 }
