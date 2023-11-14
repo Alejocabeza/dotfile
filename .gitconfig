@@ -65,3 +65,5 @@
 	directory = /home/alejocabeza/workspace/wordpress/wp-content/plugins/deepground/
 	directory = /home/alejocabeza/workspace/wordpress/wp-content/plugins/deepground
 	directory = /home/alejocabeza/workspace/algoritmoo-erp/backend/api
+[credential "helperselector"]
+	selected = wincred
