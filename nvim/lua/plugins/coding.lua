@@ -77,7 +77,6 @@ return {
       })
     end,
   },
-
   {
     "simrat39/symbols-outline.nvim",
     keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
@@ -86,7 +85,6 @@ return {
       position = "right",
     },
   },
-
   {
     "nvim-cmp",
     dependencies = { "hrsh7th/cmp-emoji" },

@@ -13,7 +13,6 @@ return {
         "typescript-language-server",
         "css-lsp",
         "intelephense",
-        "phpactor",
       })
     end,
   },
@@ -70,6 +69,7 @@ return {
           },
         },
         intelephense = {},
+        astro = {},
         lua_ls = {
           -- enabled = false,
           single_file_support = true,
