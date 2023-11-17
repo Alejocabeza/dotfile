@@ -55,6 +55,15 @@ return {
 
   {
     "rcarriga/nvim-notify",
+    keys = {
+      {
+        "<esc>",
+        function()
+          require("notify").dismiss({ silent = true, pending = true })
+        end,
+        desc = "Dismiss all Notifications",
+      },
+    },
     opts = {
       timeout = 5000,
     },
@@ -140,7 +149,7 @@ return {
 
       return {
         options = {
-          theme = my_theme,
+          theme = "solarized_dark",
         },
       }
     end,

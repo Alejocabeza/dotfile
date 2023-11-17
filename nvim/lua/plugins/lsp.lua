@@ -13,6 +13,7 @@ return {
         "typescript-language-server",
         "css-lsp",
         "intelephense",
+        "eslint_d",
       })
     end,
   },
