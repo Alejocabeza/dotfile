@@ -22,9 +22,9 @@ function run {
 
 keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 
-# if [ $keybLayout = "be" ]; then
-#   cp $HOME/.config/qtile/config-azerty.py $HOME/.config/qtile/config.py
-# fi
+if [ $keybLayout = "be" ]; then
+	cp $HOME/.config/qtile/config-azerty.py $HOME/.config/qtile/config.py
+fi
 
 #autostart ArcoLinux Welcome App
 run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &

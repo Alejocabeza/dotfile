@@ -10,7 +10,7 @@ layout_theme = {
 
 layouts = [
     layout.MonadTall(**layout_theme),
-    layout.Floating(**layout_theme),
+    # layout.Floating(**layout_theme),
     layout.Max(**layout_theme),
 ]
 
