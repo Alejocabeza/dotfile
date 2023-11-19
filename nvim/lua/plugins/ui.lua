@@ -149,7 +149,7 @@ return {
 
       return {
         options = {
-          theme = "solarized_dark",
+          theme = my_theme,
         },
       }
     end,

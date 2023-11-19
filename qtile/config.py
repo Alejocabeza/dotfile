@@ -59,11 +59,6 @@ def logout_killed(window):
         qtile.hide_show_bar()
 
 
-@hook.subscribe.startup_once
-def start_once():
-    subprocess.call([qtile_path + "/.config/qtile/autostart.sh"])
-
-
 @hook.subscribe.startup
 def start_always():
     # Set the cursor to something sane in X
