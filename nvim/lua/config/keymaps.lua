@@ -4,6 +4,9 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
+-- duplicated line
+keymap.set("n", "tt", ":t.<cr>")
+
 -- Increment/decrement
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
