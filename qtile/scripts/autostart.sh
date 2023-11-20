@@ -30,8 +30,8 @@ fi
 run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
 
 #Some ways to set your wallpaper besides variety or nitrogen
-feh --bg-fill /usr/share/backgrounds/archlinux/arch-wallpaper.jpg &
-feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
+feh --bg-fill $HOME/dotfile/wallpapers/wallpapers-2.jpg &
+# feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 #wallpaper for other Arch based systems
 #feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
 #start the conky to learn the shortcuts
@@ -41,10 +41,11 @@ feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 
 #starting utility applications at boot time
-run variety &
+# run variety &
 run nm-applet &
 run pamac-tray &
-run xfce4-power-manager &
+run cbatticon -u 5 &
+# run xfce4-power-manager &
 numlockx on &
 blueberry-tray &
 picom --config $HOME/.config/qtile/scripts/picom.conf &

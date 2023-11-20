@@ -149,7 +149,7 @@ return {
 
       return {
         options = {
-          theme = my_theme,
+          theme = "onedark",
         },
       }
     end,
