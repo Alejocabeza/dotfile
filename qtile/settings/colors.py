@@ -8,5 +8,5 @@ colors = [
     ["#cd1f3f", "#cd1f3f"],  # color 6
     ["#62FF00", "#62FF00"],  # color 7
     ["#6790eb", "#6790eb"],  # color 8
-    ["#a9a9a9", "#a9a9a9"],
+    ["#a9a9a9", "#a9a9a9"],  # color 9
 ]
