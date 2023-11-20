@@ -3,7 +3,7 @@ return {
   opts = function()
     return {
       formatters_by_ft = {
-        javascript = function(bufnr) end,
+        javascript = { "eslint_d" },
         typescript = { "eslint_d" },
         javascriptreact = { "eslint_d" },
         typescriptreact = { "eslint_d" },
