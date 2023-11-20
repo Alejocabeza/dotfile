@@ -158,6 +158,9 @@ keys = [
     Key([mod, "shift"], "Right", lazy.layout.swap_right()),
     # TOGGLE FLOATING LAYOUT
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
+    # toggle ligth
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
 ]
 
 
