@@ -20,7 +20,7 @@ fnm env --use-on-cd | Out-String | Invoke-Expression
 
 #starship
 Invoke-Expression (&starship init powershell)
-$ENV:STARSHIP_CONFIG = "$HOME\.config\powershell\starship.toml"
+$ENV:STARSHIP_CONFIG = "$HOME\dotfile\starship.toml"
 
 #fuctions
 function changeDirectory($link) {
@@ -40,6 +40,6 @@ function changeNvimDirectory() {
   return Set-Location '~\AppData\Local\nvim'
 }
 
-function linkSymbol($path, $target) {
-  return New-Item -ItemType SymbolicLink -Path "$path" -Target "$path" 
+function linkSymbol($target, $path) {
+  return New-Item -ItemType SymbolicLink -Path "$path" -Target "$target" 
 }
