@@ -102,72 +102,50 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = function()
-      local colors = {
-        blue = "#65D1FF",
-        green = "#3EFFDC",
-        violet = "#FF61EF",
-        yellow = "#FFDA7B",
-        red = "#FF4A4A",
-        fg = "#c3ccdc",
-        bg = "#112638",
-        inactive_bg = "#2c3043",
-      }
-
-      local my_theme = {
-        normal = {
-          a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
-          b = { bg = colors.bg, fg = colors.fg },
-          c = { bg = colors.bg, fg = colors.fg },
-        },
-        insert = {
-          a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-          b = { bg = colors.bg, fg = colors.fg },
-          c = { bg = colors.bg, fg = colors.fg },
-        },
-        visual = {
-          a = { bg = colors.violet, fg = colors.bg, gui = "bold" },
-          b = { bg = colors.bg, fg = colors.fg },
-          c = { bg = colors.bg, fg = colors.fg },
-        },
-        command = {
-          a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
-          b = { bg = colors.bg, fg = colors.fg },
-          c = { bg = colors.bg, fg = colors.fg },
-        },
-        replace = {
-          a = { bg = colors.red, fg = colors.bg, gui = "bold" },
-          b = { bg = colors.bg, fg = colors.fg },
-          c = { bg = colors.bg, fg = colors.fg },
-        },
-        inactive = {
-          a = { bg = colors.inactive_bg, fg = colors.semilightgray, gui = "bold" },
-          b = { bg = colors.inactive_bg, fg = colors.semilightgray },
-          c = { bg = colors.inactive_bg, fg = colors.semilightgray },
-        },
-      }
-
-      return {
-        options = {
-          theme = "onedark",
-        },
-      }
-    end,
+    opts = {
+      options = {
+        -- globalstatus = false,
+        theme = "solarized_dark",
+      },
+    },
   },
 
   -- filename
   {
     "b0o/incline.nvim",
+    enabled = false,
     dependencies = { "craftzdog/solarized-osaka.nvim" },
     event = "BufReadPre",
     priority = 1200,
-    config = true,
+    config = function()
+      local colors = require("solarized-osaka.colors").setup()
+      require("incline").setup({
+        highlight = {
+          groups = {
+            InclineNormal = { guibg = colors.magenta500, guifg = colors.base04 },
+            InclineNormalNC = { guifg = colors.violet500, guibg = colors.base03 },
+          },
+        },
+        window = { margin = { vertical = 0, horizontal = 1 } },
+        hide = {
+          cursorline = true,
+        },
+        render = function(props)
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+          if vim.bo[props.buf].modified then
+            filename = "[+] " .. filename
+          end
+
+          local icon, color = require("nvim-web-devicons").get_icon_color(filename)
+          return { { icon, guifg = color }, { " " }, { filename } }
+        end,
+      })
+    end,
   },
 
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
-    disabled = false,
     opts = {
       plugins = {
         gitsigns = true,
@@ -183,12 +161,12 @@ return {
     event = "VimEnter",
     opts = function(_, opts)
       local logo = [[
- █████╗ ██╗     ███████╗     ██╗ ██████╗  ██████╗ █████╗ ██████╗ ███████╗███████╗ █████╗ 
-██╔══██╗██║     ██╔════╝     ██║██╔═══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝╚══███╔╝██╔══██╗
-███████║██║     █████╗       ██║██║   ██║██║     ███████║██████╔╝█████╗    ███╔╝ ███████║
-██╔══██║██║     ██╔══╝  ██   ██║██║   ██║██║     ██╔══██║██╔══██╗██╔══╝   ███╔╝  ██╔══██║
-██║  ██║███████╗███████╗╚█████╔╝╚██████╔╝╚██████╗██║  ██║██████╔╝███████╗███████╗██║  ██║
-╚═╝  ╚═╝╚══════╝╚══════╝ ╚════╝  ╚═════╝  ╚═════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
+        ██████╗ ███████╗██╗   ██╗ █████╗ ███████╗██╗     ██╗███████╗███████╗
+        ██╔══██╗██╔════╝██║   ██║██╔══██╗██╔════╝██║     ██║██╔════╝██╔════╝
+        ██║  ██║█████╗  ██║   ██║███████║███████╗██║     ██║█████╗  █████╗  
+        ██║  ██║██╔══╝  ╚██╗ ██╔╝██╔══██║╚════██║██║     ██║██╔══╝  ██╔══╝  
+        ██████╔╝███████╗ ╚████╔╝ ██║  ██║███████║███████╗██║██║     ███████╗
+        ╚═════╝ ╚══════╝  ╚═══╝  ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝╚═╝     ╚══════╝
       ]]
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"

@@ -12,6 +12,7 @@ return {
       },
     },
   },
+
   {
     "echasnovski/mini.hipatterns",
     event = "BufReadPre",
@@ -20,7 +21,7 @@ return {
         hsl_color = {
           pattern = "hsl%(%d+,? %d+,? %d+%)",
           group = function(_, match)
-            local utils = require("alejocabeza.utils")
+            local utils = require("craftzdog.utils")
             local h, s, l = match:match("hsl%((%d+),? (%d+),? (%d+)%)")
             h, s, l = tonumber(h), tonumber(s), tonumber(l)
             local hex_color = utils.hslToHex(h, s, l)
@@ -30,6 +31,7 @@ return {
       },
     },
   },
+
   {
     "dinhhuy258/git.nvim",
     event = "BufReadPre",
@@ -42,10 +44,7 @@ return {
       },
     },
   },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    enabled = false,
-  },
+
   {
     "telescope.nvim",
     dependencies = {
@@ -56,6 +55,74 @@ return {
       "nvim-telescope/telescope-file-browser.nvim",
     },
     keys = {
+      -- {
+      --   "<leader>fP",
+      --   function()
+      --     require("telescope.builtin").find_files({
+      --       cwd = require("lazy.core.config").options.root,
+      --     })
+      --   end,
+      --   desc = "Find Plugin File",
+      -- },
+      -- {
+      --   ";f",
+      --   function()
+      --     local builtin = require("telescope.builtin")
+      --     builtin.find_files({
+      --       no_ignore = false,
+      --       hidden = true,
+      --     })
+      --   end,
+      --   desc = "Lists files in your current working directory, respects .gitignore",
+      -- },
+      -- {
+      --   ";r",
+      --   function()
+      --     local builtin = require("telescope.builtin")
+      --     builtin.live_grep()
+      --   end,
+      --   desc = "Search for a string in your current working directory and get results live as you type, respects .gitignore",
+      -- },
+      -- {
+      --   "\\\\",
+      --   function()
+      --     local builtin = require("telescope.builtin")
+      --     builtin.buffers()
+      --   end,
+      --   desc = "Lists open buffers",
+      -- },
+      -- {
+      --   ";t",
+      --   function()
+      --     local builtin = require("telescope.builtin")
+      --     builtin.help_tags()
+      --   end,
+      --   desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
+      -- },
+      -- {
+      --   ";;",
+      --   function()
+      --     local builtin = require("telescope.builtin")
+      --     builtin.resume()
+      --   end,
+      --   desc = "Resume the previous telescope picker",
+      -- },
+      -- {
+      --   ";e",
+      --   function()
+      --     local builtin = require("telescope.builtin")
+      --     builtin.diagnostics()
+      --   end,
+      --   desc = "Lists Diagnostics for all open buffers or a specific buffer",
+      -- },
+      -- {
+      --   ";s",
+      --   function()
+      --     local builtin = require("telescope.builtin")
+      --     builtin.treesitter()
+      --   end,
+      --   desc = "Lists Function names, variables, from Treesitter",
+      -- },
       {
         "sf",
         function()

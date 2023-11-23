@@ -16,6 +16,7 @@ return {
         "http",
         "java",
         "php",
+        "twig",
         "rust",
         "scss",
         "sql",
