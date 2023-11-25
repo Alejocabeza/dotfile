@@ -29,17 +29,17 @@ function changeDirectory($link) {
 }
 
 function changeWorkspaceDirectory() {
-  return Set-Location 'E:\Documents\workspace'
+   Set-Location 'E:\Documents\workspace'
 }
 
 function changeDotfileDirectory() {
-  return Set-Location '~\dotfile'
+   Set-Location '~\dotfile'
 }
 
 function changeNvimDirectory() {
-  return Set-Location '~\AppData\Local\nvim'
+   Set-Location '~\AppData\Local\nvim'
 }
 
 function linkSymbol($target, $path) {
-  return New-Item -ItemType SymbolicLink -Path "$path" -Target "$target" 
+   New-Item -ItemType SymbolicLink -Path "$path" -Target "$target" 
 }
