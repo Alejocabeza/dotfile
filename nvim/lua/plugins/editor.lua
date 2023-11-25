@@ -1,5 +1,9 @@
 return {
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
+  },
+  {
     enabled = false,
     "folke/flash.nvim",
     ---@type Flash.Config
