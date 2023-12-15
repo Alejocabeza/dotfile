@@ -26,7 +26,7 @@ keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
 -- New tab
-keymap.set("n", "te", ":tabedit")
+keymap.set("n", "te", ":tabedit<Return>")
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 -- Split window
@@ -43,6 +43,12 @@ keymap.set("n", "<C-w><left>", "<C-w><")
 keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
+
+-- keymap.set("i", "<C-d>", function()
+-- 	local new_text = vim.fn.input("Replace with?: ")
+-- 	local cmd = "normal! *Ncgn" .. new_text
+-- 	vim.cmd(cmd)
+-- end, { desc = "Ctrl+d vs code alternative" })
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()

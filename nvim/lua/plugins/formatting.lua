@@ -12,7 +12,7 @@ return {
 				html = { "prettier" },
 				json = { "prettier" },
 				markdown = { "prettier" },
-				python = { "isort", "black" },
+				python = { "isort" },
 				lua = { "stylua" },
 				fish = { "fish_indent" },
 				sh = { "shfmt" },
