@@ -29,7 +29,7 @@ function changeDirectory($link) {
 }
 
 function changeWorkspaceDirectory() {
-   Set-Location 'E:\Documents\workspace'
+   Set-Location '~\workspace'
 }
 
 function changeDotfileDirectory() {
