@@ -11,6 +11,10 @@ return {
 		end,
 	},
 	{
+		enabled = false,
+		"folke/tokyonight.nvim",
+	},
+	{
 		"bluz71/vim-nightfly-guicolors",
 		enabled = true,
 		priority = 1000, -- make sure to load this before all the other start plugins
