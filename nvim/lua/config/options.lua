@@ -34,6 +34,11 @@ vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
 vim.opt.swapfile = false
 
+-- fold
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
+
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
