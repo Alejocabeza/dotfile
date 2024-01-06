@@ -65,7 +65,7 @@ return {
 			},
 		},
 		opts = {
-			timeout = 5000,
+			timeout = 1000,
 		},
 	},
 
@@ -73,9 +73,10 @@ return {
 	{
 		"echasnovski/mini.animate",
 		event = "VeryLazy",
+		enabled = false,
 		opts = function(_, opts)
 			opts.scroll = {
-				enable = false,
+				enable = true,
 			}
 		end,
 	},
@@ -145,6 +146,7 @@ return {
 
 	{
 		"folke/zen-mode.nvim",
+		enabled = false,
 		cmd = "ZenMode",
 		opts = {
 			plugins = {
