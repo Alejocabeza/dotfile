@@ -58,4 +58,4 @@ alias start 'make stop && make start && make server'
 alias migration 'make migration && make update-db'
 
 # Prompt
-# starship init fish | source
+starship init fish | source
