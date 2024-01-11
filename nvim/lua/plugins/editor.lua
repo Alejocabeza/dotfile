@@ -1,7 +1,50 @@
 return {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
-		enabled = false,
+		opts = {
+			filesystem = {
+				filtered_items = {
+					visible = true,
+					hide_dotfile = true,
+					hide_gitignored = true,
+					hide_hidden = true,
+					never_show = {
+						".git",
+						"node_modules",
+						"var",
+						"vendor",
+						"dist",
+						"bundle",
+					},
+				},
+			},
+			window = {
+				position = "right",
+				mapping_options = {
+					noremap = true,
+					nowait = true,
+				},
+				mappings = {
+					["<space>"] = {
+						"toggle_node",
+						nowait = false,
+					},
+					["<cr>"] = "open",
+					["<esc>"] = "cancel",
+					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+				},
+			},
+		},
+		keys = {
+			{
+				"nt",
+				function()
+					require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
+				end,
+				desc = "Explorer NeoTree (root dir)",
+			},
+		},
+		enabled = true,
 	},
 	{
 		enabled = false,
