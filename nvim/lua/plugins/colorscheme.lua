@@ -11,12 +11,22 @@ return {
 		end,
 	},
 	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+		opts = {
+			transparent_mode = true,
+		},
+		config = function(_, opts)
+			require("gruvbox").setup(opts)
+		end,
+	},
+	{
 		enabled = false,
 		"folke/tokyonight.nvim",
 	},
 	{
 		"bluz71/vim-nightfly-guicolors",
-		enabled = true,
+		enabled = false,
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
 			vim.cmd([[colorscheme nightfly]])
