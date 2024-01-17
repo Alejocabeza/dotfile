@@ -43,6 +43,14 @@ return {
 			ignore = false,
 		},
 	},
+	init = function()
+		if vim.fn.argc(-1) == 1 then
+			local stat = vim.loop.fs_stat(vim.fn.argv(0))
+			if stat and stat.type == "directory" then
+				require("nvim-tree")
+			end
+		end
+	end,
 	config = function(_, opts)
 		require("nvim-tree").setup(opts)
 	end,
