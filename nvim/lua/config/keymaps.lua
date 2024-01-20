@@ -1,52 +1,82 @@
-local keymap = vim.keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+-- better up/down
+map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+
+-- Resize window using <ctrl> arrow keys
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+
+-- Move Lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
+
+-- Clear search with <esc>
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+
+-- better indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+-- save file
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+
 -- duplicated line
-keymap.set("n", "tt", ":t.<cr>")
+map("n", "tt", ":t.<cr>")
 
 -- Increment/decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
+map("n", "+", "<C-a>")
+map("n", "-", "<C-x>")
 
 -- Delete a word backwards
-keymap.set("n", "dw", 'vb"_d')
+map("n", "dw", 'vb"_d')
 
 -- Select all
-keymap.set("n", "<C-a>", "gg<S-v>")
+map("n", "<C-a>", "gg<S-v>")
 
 -- Jumplist
-keymap.set("n", "<C-m>", "<C-i>", opts)
+map("n", "<C-m>", "<C-i>", opts)
 
 -- New Tab
-keymap.set("n", "te", ":tabedit<Return>", opts)
-keymap.set("n", "<Tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-Tab>", ":tabprev<Return>", opts)
+map("n", "te", ":tabedit<Return>", opts)
+map("n", "<Tab>", ":tabnext<Return>", opts)
+map("n", "<s-Tab>", ":tabprev<Return>", opts)
 
 -- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
+map("n", "ss", ":split<Return>", opts)
+map("n", "sv", ":vsplit<Return>", opts)
 
 -- Move windows
-keymap.set("n", "<C-h>", "<C-w>h")
-keymap.set("n", "<C-j>", "<C-w>j")
-keymap.set("n", "<C-k>", "<C-w>k")
-keymap.set("n", "<C-l>", "<C-w>l")
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
 
 -- resized window
-keymap.set("n", "<C-w><left>", "<C-w><")
-keymap.set("n", "<C-w><rigth>", "<C-w>>")
-keymap.set("n", "<C-w><up>", "<C-w>+")
-keymap.set("n", "<C-w><down>", "<C-w>-")
+map("n", "<C-w><left>", "<C-w><")
+map("n", "<C-w><rigth>", "<C-w>>")
+map("n", "<C-w><up>", "<C-w>+")
+map("n", "<C-w><down>", "<C-w>-")
 
 -- Diagnostic
--- keymap.set("n", "<C-k>", function()
-  -- vim.diagnostic.goto_prev()
+-- map("n", "<C-k>", function()
+-- vim.diagnostic.goto_prev()
 -- end, opts)
 
--- keymap.set("n", "<C-j>", function()
-  -- vim.diagnostic.goto_next()
+-- map("n", "<C-j>", function()
+-- vim.diagnostic.goto_next()
 -- end, opts)
 
-keymap.set("n", "<leader>r", function()
-  require("craftzdog.utils").replaceHexWithHSL()
+map("n", "<leader>r", function()
+	require("craftzdog.utils").replaceHexWithHSL()
 end)
