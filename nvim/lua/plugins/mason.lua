@@ -8,6 +8,7 @@ return {
 			"stylua",
 			"shfmt",
 			"hadolint",
+			"eslint_d",
 		},
 	},
 	config = function(_, opts)
