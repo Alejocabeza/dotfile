@@ -7,7 +7,15 @@ return {
 		{
 			"folke/neoconf.nvim",
 			cmd = "Neoconf",
-			config = false,
+			opts = {
+				library = {
+					plugins = { "neotest" },
+					types = true,
+				},
+			},
+			config = function(_, opts)
+				require("neoconf").setup(opts)
+			end,
 			dependencies = { "nvim-lspconfig" },
 		},
 		{
