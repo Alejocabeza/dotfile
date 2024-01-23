@@ -47,6 +47,6 @@ return {
 		require("nvim-tree").setup(opts)
 	end,
 	keys = {
-		{ "nt", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Toggle file explorer on current file" } },
+		{ "<leader><Tab>", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Toggle file explorer on current file" } },
 	},
 }
