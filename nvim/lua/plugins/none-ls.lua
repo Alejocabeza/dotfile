@@ -4,7 +4,6 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"jay-babu/mason-null-ls.nvim",
-			"nvim-lua/plenary.nvim",
 		},
 		config = function()
 			local mason_null_ls = require("mason-null-ls")

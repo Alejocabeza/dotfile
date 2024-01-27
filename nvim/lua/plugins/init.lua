@@ -1,5 +1,6 @@
 return {
 	{ "MunifTanjim/nui.nvim", lazy = true },
+	{ "nvim-lua/plenary.nvim" },
 	{
 		"editorconfig/editorconfig-vim",
 	},
