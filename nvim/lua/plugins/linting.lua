@@ -11,6 +11,7 @@ return {
 			typescript = { "eslint_d" },
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
+			astro = { "eslint_d" },
 			svelte = { "eslint_d" },
 			html = { "eslint_d" },
 			css = { "eslint_d" },
@@ -32,4 +33,3 @@ return {
 		end, { desc = "Trigger linting for current file" })
 	end,
 }
-

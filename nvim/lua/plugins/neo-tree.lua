@@ -61,11 +61,17 @@ return {
 					hide_dotfiles = false,
 					hide_gitignored = false,
 					hide_by_name = {
+						".git",
 						"node_modules",
+						"var",
+						"vendor",
+						"dist",
+						"build",
 					},
 					never_show = {
 						".DS_Store",
 						"thumbs.db",
+						".vscode",
 					},
 				},
 			},
