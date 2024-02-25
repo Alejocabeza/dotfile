@@ -12,7 +12,7 @@
     grep = auto
     ui = auto
 [alias]
-    a = add 
+    a = add
     aa = add .
     d = diff
     ch = checkout
@@ -36,7 +36,7 @@
     dump = cat-file -p
     find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | peco | awk '{print $1}' | xargs -I {} git diff {}^ {}; }; f"
     edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
-    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"  
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
     sta = stash
     stp = stash pop
 [hub]
@@ -50,7 +50,7 @@
   tool = nvimdiff
 [difftool "nvimdiff"]
 	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "nvimdiff"]
 	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
