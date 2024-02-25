@@ -3,7 +3,6 @@ return {
 	dependencies = {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
 		"nvim-telescope/telescope-ui-select.nvim",
-		"nvim-telescope/telescope-frecency.nvim",
 		"nvim-telescope/telescope-file-browser.nvim",
 	},
 	keys = {
@@ -258,7 +257,6 @@ return {
 		telescope.load_extension("fzf")
 		telescope.load_extension("ui-select")
 		telescope.load_extension("refactoring")
-		telescope.load_extension("frecency")
 		telescope.load_extension("file_browser")
 	end,
 }

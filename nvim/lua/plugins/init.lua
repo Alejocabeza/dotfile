@@ -2,6 +2,7 @@ return {
 	{ "nvim-lua/plenary.nvim" },
 	{ "nvim-tree/nvim-web-devicons" },
 	{ "MunifTanjim/nui.nvim" },
+	{ "gpanders/editorconfig.nvim" },
 	{
 		"LunarVim/breadcrumbs.nvim",
 		config = function()
