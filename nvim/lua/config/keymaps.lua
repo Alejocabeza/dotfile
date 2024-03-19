@@ -8,10 +8,10 @@ map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 
 -- Resize window using <ctrl> arrow keys
-map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+-- map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+-- map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+-- map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+-- map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
 
 -- Move Lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
@@ -57,10 +57,10 @@ map("n", "ss", ":split<Return>", opts)
 map("n", "sv", ":vsplit<Return>", opts)
 
 -- Move windows
-map("n", "sh", "<C-w>h")
-map("n", "sj", "<C-w>j")
-map("n", "sk", "<C-w>k")
-map("n", "sl", "<C-w>l")
+map("n", "<c-h>", "<C-w>h")
+map("n", "<c-j>", "<C-w>j")
+map("n", "<c-k>", "<C-w>k")
+map("n", "<c-l>", "<C-w>l")
 
 -- resized window
 map("n", "<C-w><left>", "<C-w><")
@@ -69,15 +69,14 @@ map("n", "<C-w><up>", "<C-w>+")
 map("n", "<C-w><down>", "<C-w>-")
 
 -- Diagnostic
- map("n", "<C-k>", function()
- vim.diagnostic.goto_prev()
- end, opts)
-
-map("n", "<C-j>", function()
- vim.diagnostic.goto_next()
-end, opts)
+--  map("n", "<C-k>", function()
+--  vim.diagnostic.goto_prev()
+--  end, opts)
+--
+-- map("n", "<C-j>", function()
+--  vim.diagnostic.goto_next()
+-- end, opts)
 
 -- map("n", "<leader>r", function()
 -- 	require("craftzdog.utils").replaceHexWithHSL()
 -- end)
-
