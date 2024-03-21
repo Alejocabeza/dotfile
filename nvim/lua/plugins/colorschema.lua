@@ -30,7 +30,7 @@ return {
 	{
 		"sainnhe/sonokai",
 		priority = 1000,
-		enabled = true,
+		enabled = false,
 		config = function()
 			vim.g.sonokai_transparent_background = "1"
 			vim.g.sonokai_enable_italic = "1"
@@ -39,6 +39,17 @@ return {
 		end,
 		init = function()
 			vim.cmd.colorscheme("sonokai")
+		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = true,
+		},
+		init = function()
+			vim.cmd.colorscheme("tokyonight")
 		end,
 	},
 }

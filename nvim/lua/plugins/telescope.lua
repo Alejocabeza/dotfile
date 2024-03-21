@@ -4,12 +4,18 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
 		"nvim-telescope/telescope-ui-select.nvim",
 		"nvim-telescope/telescope-file-browser.nvim",
+		"olacin/telescope-cc.nvim",
 	},
 	keys = {
 		{
 			"<leader><space>",
 			"<cmd>Telescope find_files<cr>",
 			{ desc = "Fuzzy find files in cwd" },
+		},
+		{
+			"<leader>cc",
+			"<cmd>Telescope conventional_commits<cr>",
+			{ desc = "Conventional Commits" },
 		},
 		{
 			"<leader>fb",
@@ -220,6 +226,13 @@ return {
 						"*/lua-language-server/*",
 					},
 				},
+				conventional_commits = {
+					theme = "ivy", -- custom theme
+					action = function(entry)
+						vim.print(entry)
+					end,
+					include_body_and_footer = true, -- Add prompts for commit body and footer
+				},
 				file_browser = {
 					theme = "dropdown",
 					-- disables netrw and use telescope-file-browser in its place
@@ -258,5 +271,6 @@ return {
 		telescope.load_extension("ui-select")
 		telescope.load_extension("refactoring")
 		telescope.load_extension("file_browser")
+		telescope.load_extension("conventional_commits")
 	end,
 }
