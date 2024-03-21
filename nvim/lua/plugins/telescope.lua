@@ -9,7 +9,12 @@ return {
 	keys = {
 		{
 			"<leader><space>",
-			"<cmd>Telescope find_files<cr>",
+			function()
+				require("telescope.builtin").find_files({
+					no_ignore = false,
+					hidden = true,
+				})
+			end,
 			{ desc = "Fuzzy find files in cwd" },
 		},
 		{
@@ -227,7 +232,7 @@ return {
 					},
 				},
 				conventional_commits = {
-					theme = "ivy", -- custom theme
+					theme = "dropdown", -- custom theme
 					action = function(entry)
 						vim.print(entry)
 					end,
