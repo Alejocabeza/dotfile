@@ -43,6 +43,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {
@@ -50,6 +51,26 @@ return {
 		},
 		init = function()
 			vim.cmd.colorscheme("tokyonight")
+		end,
+	},
+	{
+		"baliestri/aura-theme",
+		enabled = false,
+		lazy = false,
+		priority = 1000,
+		config = function(plugin)
+			vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+			vim.cmd([[colorscheme aura-dark]])
+		end,
+	},
+	{
+		"bluz71/vim-moonfly-colors",
+		enabled = true,
+		name = "moonfly",
+		lazy = false,
+		priority = 1000,
+		init = function()
+			vim.cmd.colorscheme("moonfly")
 		end,
 	},
 }
